@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StackLayoutManager.iml" filepath="$PROJECT_DIR$/StackLayoutManager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StackLayoutManager.iml" filepath="$PROJECT_DIR$/.idea/modules/StackLayoutManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StackLayoutManager.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StackLayoutManager.app.iml" />
     </modules>
   </component>
 </project>

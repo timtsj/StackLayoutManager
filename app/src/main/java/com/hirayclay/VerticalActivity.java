@@ -32,11 +32,11 @@ public class VerticalActivity extends AppCompatActivity {
         }
 
         Config config = new Config();
-        config.secondaryScale = 0.95f;
-        config.scaleRatio = 0.4f;
-        config.maxStackCount = 4;
-        config.initialStackCount = 4;
-        config.space = 45;
+        config.secondaryScale = 1f;
+        config.scaleRatio = 0.2f;
+        config.maxStackCount = 2;
+        config.initialStackCount = 0;
+        config.space = 20;
         config.parallex = 1.5f;
         config.align = Align.TOP;
         verticalRecyclerview.setLayoutManager(new StackLayoutManager(config));
