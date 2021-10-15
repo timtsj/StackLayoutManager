@@ -44,6 +44,12 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/swipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="swipe"
+        android:textAllCaps="false" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"

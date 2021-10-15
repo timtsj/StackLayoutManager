@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 
+import com.hirayclay.swipeLib.SwipeActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,5 +91,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbinder.unbind();
+    }
+
+    @OnClick(R.id.swipe)
+    public void swipe() {
+        startActivity(new Intent(this, SwipeActivity.class));
     }
 }

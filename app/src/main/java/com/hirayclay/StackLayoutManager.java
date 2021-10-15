@@ -29,7 +29,7 @@ import static com.hirayclay.Align.TOP;
  * @author CJJ
  */
 
-class StackLayoutManager extends RecyclerView.LayoutManager {
+public class StackLayoutManager extends RecyclerView.LayoutManager {
 
     private static final String TAG = "StackLayoutManager";
 
@@ -68,7 +68,7 @@ class StackLayoutManager extends RecyclerView.LayoutManager {
     private Method sSetScrollState;
     private int mPendingScrollPosition = NO_POSITION;
 
-    StackLayoutManager(Config config) {
+    public StackLayoutManager(Config config) {
         this();
         this.maxStackCount = config.maxStackCount;
         this.mSpace = config.space;

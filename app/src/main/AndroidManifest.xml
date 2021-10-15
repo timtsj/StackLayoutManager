@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VerticalActivity"></activity>
+        <activity android:name=".VerticalActivity"/>
+        <activity android:name=".swipeLib.SwipeActivity"/>
     </application>
 
 </manifest>

@@ -6,7 +6,7 @@ package com.hirayclay;
  * @author CJJ
  */
 
-enum Align {
+public enum Align {
 
 
     LEFT(1),
