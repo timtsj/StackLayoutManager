@@ -43,7 +43,15 @@ public class CardItemTouchHelperCallback<T> extends ItemTouchHelper.Callback {
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         int dragFlags = 0;
-        int swipeFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        int swipeFlags = 0;
+        Object tag = recyclerView.getChildAt(viewHolder.getAdapterPosition()).getTag();
+        boolean isEnabled = false;
+        if (tag instanceof Boolean) {
+            isEnabled = (boolean) tag;
+        }
+        if (isEnabled) {
+            swipeFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        }
         return makeMovementFlags(dragFlags, swipeFlags);
     }
 

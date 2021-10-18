@@ -185,7 +185,7 @@ public class StackLayoutManager extends RecyclerView.LayoutManager {
         int itemCountAfterBaseItem = leavingSpace / mUnit + 2;
         int e = currPos + itemCountAfterBaseItem;
 
-        int start = currPos - maxStackCount >= 0 ? currPos - maxStackCount : 0;
+        int start = Math.max(currPos - maxStackCount, 0);
         int end = e >= getItemCount() ? getItemCount() - 1 : e;
 
         int left = getWidth() / 2 - mItemWidth / 2;
@@ -195,6 +195,7 @@ public class StackLayoutManager extends RecyclerView.LayoutManager {
 
             float scale = scale(i);
             float alpha = alpha(i);
+            view.setTag(scale == 1.0f);
 
             addView(view);
             measureChildWithMargins(view, 0, 0);
