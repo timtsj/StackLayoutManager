@@ -11,7 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.hirayclay.Align;
+import com.hirayclay.Config;
 import com.hirayclay.R;
+import com.hirayclay.StackLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,9 +76,19 @@ public class SwipeActivity extends AppCompatActivity {
 
         });
         final ItemTouchHelper touchHelper = new ItemTouchHelper(cardCallback);
-        final CardLayoutManager cardLayoutManager = new CardLayoutManager(recyclerView, touchHelper);
-        recyclerView.setLayoutManager(cardLayoutManager);
+//        final CardLayoutManager cardLayoutManager = new CardLayoutManager(recyclerView, touchHelper);
+//        recyclerView.setLayoutManager(cardLayoutManager);
         touchHelper.attachToRecyclerView(recyclerView);
+
+        Config config = new Config();
+        config.secondaryScale = 0.99f;
+        config.scaleRatio = 0.2f;
+        config.maxStackCount = 2;
+        config.initialStackCount = 0;
+        config.space = 20;
+        config.parallex = 1.5f;
+        config.align = Align.TOP;
+        recyclerView.setLayoutManager(new StackLayoutManager(config));
     }
 
     private void initData() {

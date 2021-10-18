@@ -8,7 +8,7 @@ public final class CardConfig {
     /**
      * 显示可见的卡片数量
      */
-    public static final int DEFAULT_SHOW_ITEM = 3;
+    public static final int DEFAULT_SHOW_ITEM = 2;
     /**
      * 默认缩放的比例
      */

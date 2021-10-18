@@ -1,5 +1,11 @@
 package com.hirayclay;
 
+import static android.support.v7.widget.RecyclerView.NO_POSITION;
+import static com.hirayclay.Align.BOTTOM;
+import static com.hirayclay.Align.LEFT;
+import static com.hirayclay.Align.RIGHT;
+import static com.hirayclay.Align.TOP;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
@@ -12,12 +18,6 @@ import android.view.ViewConfiguration;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import static android.support.v7.widget.RecyclerView.NO_POSITION;
-import static com.hirayclay.Align.BOTTOM;
-import static com.hirayclay.Align.LEFT;
-import static com.hirayclay.Align.RIGHT;
-import static com.hirayclay.Align.TOP;
 
 /**
  * Created by CJJ on 2017/5/17.
@@ -87,7 +87,7 @@ public class StackLayoutManager extends RecyclerView.LayoutManager {
 
     @Override
     public boolean isAutoMeasureEnabled() {
-        return  true;
+        return true;
     }
 
     @Override
@@ -131,7 +131,7 @@ public class StackLayoutManager extends RecyclerView.LayoutManager {
     @Override
     public void onLayoutCompleted(RecyclerView.State state) {
         super.onLayoutCompleted(state);
-        if (getItemCount()<=0)
+        if (getItemCount() <= 0)
             return;
         if (!initial) {
             fill(recycler, initialOffset, false);
