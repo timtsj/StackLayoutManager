@@ -18,14 +18,17 @@ public class CardItemTouchHelperCallback<T> extends ItemTouchHelper.Callback {
     private List<T> dataList;
     private OnSwipeListener<T> mListener;
 
-    public CardItemTouchHelperCallback(@NonNull RecyclerView.Adapter adapter, @NonNull List<T> dataList) {
+    public CardItemTouchHelperCallback(@NonNull RecyclerView.Adapter adapter) {
         this.adapter = checkIsNull(adapter);
+    }
+
+    public CardItemTouchHelperCallback(@NonNull RecyclerView.Adapter adapter, @NonNull List<T> dataList) {
+        this(adapter);
         this.dataList = checkIsNull(dataList);
     }
 
     public CardItemTouchHelperCallback(@NonNull RecyclerView.Adapter adapter, @NonNull List<T> dataList, OnSwipeListener<T> listener) {
-        this.adapter = checkIsNull(adapter);
-        this.dataList = checkIsNull(dataList);
+        this(adapter, dataList);
         this.mListener = listener;
     }
 
@@ -44,10 +47,14 @@ public class CardItemTouchHelperCallback<T> extends ItemTouchHelper.Callback {
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         int dragFlags = 0;
         int swipeFlags = 0;
-        Object tag = recyclerView.getChildAt(viewHolder.getAdapterPosition()).getTag();
         boolean isEnabled = false;
-        if (tag instanceof Boolean) {
-            isEnabled = (boolean) tag;
+        try {
+            Object tag = viewHolder.itemView.getTag();
+            if (tag instanceof Boolean) {
+                isEnabled = (boolean) tag;
+            }
+        } catch (Exception e) {
+
         }
         if (isEnabled) {
             swipeFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
@@ -117,4 +124,7 @@ public class CardItemTouchHelperCallback<T> extends ItemTouchHelper.Callback {
         return recyclerView.getWidth() * getSwipeThreshold(viewHolder);
     }
 
+    public void setItems(@NonNull List<T> dataList) {
+        this.dataList = dataList;
+    }
 }
